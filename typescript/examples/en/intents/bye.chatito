@@ -1,0 +1,32 @@
+import ./common.chatito
+
+%[bye]('training': '300', 'testing': '100')
+    *[20%] ~[bye]
+    *[20%] ~[leaving]
+    *[10%]~[bye] ~[leaving]
+    *[10%] ~[leaving] ~[bye]
+    ~[bye] ~[bye]
+    ~[leaving] ~[leaving]
+    ~[leaving] ~[bye?] ~[thanks?]
+    ~[bye] ~[leaving?] ~[thanks?]
+
+~[bye]
+    bye
+    goodbye
+    ttyl
+    gtg
+    adios
+    farewell
+    adieu
+    chao
+    chau
+
+~[leaving]
+    leaving
+    talk to you soon
+    have to go
+    got to go
+    talk to you later
+    heading out
+    im leaving now
+    going out

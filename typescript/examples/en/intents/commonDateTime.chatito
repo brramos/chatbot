@@ -1,0 +1,146 @@
+// Common date time entities to be imported and reused
+
+
+~[contextualDate]
+    today
+    tomorrow
+    this ~[dayNames]
+    next week
+    now
+    ~[dayNames] next week
+
+~[dayNames]
+    monday
+    tuesday
+    thursday
+    tuesday
+    friday
+    saturday
+    sunday
+
+~[monthsDates]
+    january
+    february
+    march
+    april
+    may
+    june
+    july
+    august
+    september
+    october
+    november
+    dicember
+
+~[monthDayExtensions]
+    the 23rd
+    23
+    14th
+    14
+    30
+    1st
+    the 4th
+    19th
+    the 3rd
+    31th
+    15
+    26
+    sixth
+    6th
+    7th
+    seventh
+    fourth
+    fifth
+
+~[times]
+    ~[11am]
+    ~[8am]
+    ~[12]
+    ~[23pm]
+    ~[13pm]
+    ~[15pm]
+    ~[16pm]
+    ~[20pm]
+
+~[11am]
+    11am
+    11:11
+    11:46am
+    11:00 am
+    1130 am
+    1123am
+    eleven at morning
+    eleven and a half at morning
+
+~[8am]
+    8am
+    08:25
+    8:33am
+    8:13 am
+    0803 am
+    8:43 am
+    eight at morning
+    eight and a half at morning
+
+~[12]
+    12
+    12:45
+    twelve noon
+    12am
+    12:34am
+    1223 am
+    midday
+    twelve and a half
+
+~[23pm]
+    23pm
+    23:15
+    23:23pm
+    23:11 pm
+    2350pm
+    eleven at night
+    eleven in the night
+
+~[13pm]
+    13pm
+    13:05
+    13:16pm
+    1pm
+    1:30pm
+    1:28pm
+    1315pm
+    1355 pm
+    one in the afternoon
+    one and a half in the afternoon
+
+~[15pm]
+    15pm
+    15:56
+    3 in the afternoon
+    3pm
+    3:15 pm
+    3:45pm
+    3:15pm
+    0322pm
+    335 pm
+    3:30 afternoon
+
+~[16pm]
+    16pm
+    16:16 pm
+    16:56
+    4 in the afternoon
+    4pm
+    4:15pm
+    4:25pm
+    1611pm
+
+~[20pm]
+    20pm
+    20:17
+    8 in the night
+    8pm
+    8:45pm
+    8 at night
+    822 pm
+    0840pm

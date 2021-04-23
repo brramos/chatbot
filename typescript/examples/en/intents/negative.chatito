@@ -1,0 +1,43 @@
+import ./common.chatito
+
+%[negative]('training': '300', 'testing': '100')
+    *[20%] ~[no] 
+    *[20%] ~[notWhatIWant]
+    *[10%] ~[no] ~[notWhatIWant]
+    *[10%] ~[notWhatIWant] ~[no]
+    ~[no] ~[no]
+    ~[notWhatIWant] ~[notWhatIWant]
+    ~[no] ~[please]
+    ~[notWhatIWant] ~[please]
+
+~[no]
+    no
+    nope
+    negative
+    not correct
+    incorrect
+    no sir
+    wrong
+
+~[notWhatIWant]
+    dont want that
+    dont desire that
+    dont agree on that
+    didnt meant that
+    dont mean that
+    not what i want
+    not correct
+    wrong
+    bad
+    incorrect
+    im not ok with that
+    not good
+    its bad
+    that is bad
+    that is wrong
+    im not good with that
+    ok its not fine
+    definitely no
+    not good for me
+    its not ok
+    its not correct

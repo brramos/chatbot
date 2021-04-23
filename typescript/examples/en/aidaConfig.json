@@ -1,0 +1,8 @@
+{
+    "dataset": {
+        "trainingDataset": "./examples/en/data/default_dataset_training.json",
+        "testingDataset": "./examples/en/data/default_dataset_testing.json",
+        "modelsOutput": "./public/models"
+    },
+    "language": "en"
+}

@@ -1,0 +1,17 @@
+.vscode/
+.DS_Store
+.cache
+.env
+examples
+node_modules
+plugins
+public
+src
+web
+.babelrc
+.nvmrc
+.prettierrc
+tsconfig_npm.json
+tsconfig.json
+gatsby-config.js
+tslint.json

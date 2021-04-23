@@ -1,0 +1,30 @@
+import ./common.chatito
+import ./commonDateTime.chatito
+
+%[addVitalsToChart]('training': '200', 'testing': '200')
+    *[50%] ~[add?] @[vitalEvent] @[measurementBP] ~[at] @[vitalDateTime]
+    *[50%] @[vitalEvent] @[measurementBP]
+
+@[vitalEvent]
+    blood pressure
+    bp
+    pressure
+
+@[measurementBP]
+    80 over 120
+    70 over 129
+    65 over 130
+    75 over 160
+    66 over 166
+    55 over 110
+
+
+
+@[vitalDateTime]
+    ~[at?] ~[contextualDate]
+    ~[contextualDate] ~[at?] ~[times?]
+    ~[contextualDate] at ~[times]
+    ~[times?] ~[contextualDate]
+    ~[monthsDates] ~[monthDayExtensions] ~[times?]
+    ~[times?] ~[monthsDates] ~[monthDayExtensions]
+

@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES2015",
+      "module": "commonjs",
+      "jsx": "react",
+      "strict": true,
+      "declaration": true,
+      "removeComments": true,
+      "outDir": "./dist",
+      "types": ["node"]
+    },
+    "include": [
+      "src/**/*",
+      "web/**/*"
+    ],
+    "exclude": [
+      "dist",
+      "node_modules"
+    ]
+  }
