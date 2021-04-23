@@ -1,1 +1,1 @@
-{"intents":["addVitalsToChart","affirmative","bye","encounter","greet","negative","wtf"],"intentsWithSlots":["addVitalsToChart"],"language":"en","maxWordsPerSentence":19,"slotsToId":{"O":0,"vitalEvent":1,"measurementBP":2,"vitalDateTime":3}}
+{"intents":["addVitalsToChart","affirmative","bye","encounter","greet","negative","wtf"],"intentsWithSlots":["addVitalsToChart"],"language":"en","maxWordsPerSentence":20,"slotsToId":{"O":0,"vitalEvent":1,"measurementBP":2,"vitalDateTime":3}}

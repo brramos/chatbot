@@ -13,7 +13,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/frederickforester/aida-master/typescript/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/frederickforester/Documents/GitHub/chatbot/typescript/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
@@ -37,7 +37,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/frederickforester/aida-master/typescript/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/frederickforester/Documents/GitHub/chatbot/typescript/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
@@ -61,7 +61,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/frederickforester/aida-master/typescript/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/frederickforester/Documents/GitHub/chatbot/typescript/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
@@ -85,7 +85,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/frederickforester/aida-master/typescript/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/frederickforester/Documents/GitHub/chatbot/typescript/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
