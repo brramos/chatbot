@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: 'Aida'
+        title: 'Hazel'
     },
     plugins: [
         'gatsby-plugin-sharp',
@@ -13,7 +13,7 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/../`,
+                path: `${__dirname}/src/`,
                 ignore: ['!(readme.md|technical_overview.md|docs/*|typescript/examples/*.chatito)'],
                 name: 'markdown-pages',
             },

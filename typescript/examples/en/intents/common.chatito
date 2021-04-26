@@ -28,3 +28,51 @@
     for
     about
     around
+
+~[exams]
+    chest exam
+    neuro
+    neurological
+    heent
+    head
+    neck
+    pelvic
+    pelvis
+    extremities
+    skin
+
+~[procedures]
+    advanced cardiac
+    advance cardiac
+    cardiac
+    advanced cardiac life saving
+    invasive lines
+    intravenous
+    IV
+    oxygen therapy
+    oxygen
+    mannitol
+    airway management
+    airway
+    intubation
+    intubated
+    intubating
+    other procedure 
+
+~[clinicalTimes]
+    call
+    time of call
+    dispatch
+    time of dispatch
+    enroute
+    time enroute
+    scene
+    arrive scene
+    record time
+    mark time
+    depart
+    depart scene
+    facility
+    arrive facility
+    signover
+    arrive hospital

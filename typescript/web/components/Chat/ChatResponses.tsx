@@ -99,6 +99,8 @@ export default class ChatResponses extends React.Component<IChatResponsesProps &
     private getVoice = () => {
         if (!synth) {
             return null;
+        }else {
+            return null;
         }
         const voices = synth.getVoices();
         const englishVoices = voices.filter(v => v.lang.toLowerCase().startsWith('en'));

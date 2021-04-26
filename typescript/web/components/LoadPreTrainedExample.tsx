@@ -11,14 +11,15 @@ interface ILoadPreTrainedExample {
     downloadProgress: number;
     isDownloading: boolean;
     modelsLoaded: boolean;
-    selectedModel: 'web' | 'node' | 'keras';
+    selectedModel: 'node';
 }
 export default class LoadPreTrainedExample extends React.Component<{}, ILoadPreTrainedExample> {
+
     public state: ILoadPreTrainedExample = {
         downloadProgress: 0,
         isDownloading: false,
         modelsLoaded: false,
-        selectedModel: 'web'
+        selectedModel: 'node'
     };
     private pipeline: AidaPipeline | null = null;
     private logger: types.IPipelineModelLogger = {
@@ -34,10 +35,16 @@ export default class LoadPreTrainedExample extends React.Component<{}, ILoadPreT
         // tslint:disable-next-line:no-console
         console.log(tf.memory());
         tf.disposeVariables();
-        (window as any).tf = tf;
+        (window as any).tf = tf;        
+
     }
+    public componentDidMount() {
+            this.loadSavedModels();
+     }
+
 
     public render() {
+
         if (this.state.modelsLoaded && this.pipeline) {
             return <TestPipelineChat pipeline={this.pipeline}>{this.renderIntentsList()}</TestPipelineChat>;
         }
@@ -58,11 +65,8 @@ export default class LoadPreTrainedExample extends React.Component<{}, ILoadPreT
                             <Select
                                 defaultValue={this.state.selectedModel}
                                 style={{ maxWidth: '100%' }}
-                                onChange={v => this.setState({ selectedModel: v as 'web' | 'node' | 'keras' })}
-                            >
-                                <Select.Option value="web">Load web trained models</Select.Option>
+                                onChange={v => this.setState({ selectedModel: v as 'node' })}>
                                 <Select.Option value="node">Load node trained models</Select.Option>
-                                <Select.Option value="keras">Load keras trained models</Select.Option>
                             </Select>
                         </div>
                         <div>
@@ -81,29 +85,6 @@ export default class LoadPreTrainedExample extends React.Component<{}, ILoadPreT
     private renderIntentsList = () => {
         return (
             <div>
-                <p>The pipeline was trained on this list of intents and slots per intent:</p>
-                <div>
-                    <ul>
-                        <li>greet</li>
-                        <li>bye</li>
-                        <li>affirmative</li>
-                        <li>negative</li>
-                        <li>wtf (detect insults and out of context stuff)</li>
-                        <li>playMusic -> slots: artist, song</li>
-                        <li>addEventToCalendar -> slots: calendarEvent, dateTime</li>
-                    </ul>
-                </div>
-                <p>
-                    You can try a sentence like 'please remind to me watch real madrid match tomorrow at 9pm' or 'play new york new york
-                    from frank sinatra'
-                </p>
-                <p>
-                    Check the{' '}
-                    <a target="_blank" href="https://github.com/rodrigopivi/aida/tree/master/typescript/examples/en/intents">
-                        chatito definition files at the github repo
-                    </a>
-                    &nbsp; for more details about the training examples generation.
-                </p>
             </div>
         );
     };
@@ -163,7 +144,7 @@ export default class LoadPreTrainedExample extends React.Component<{}, ILoadPreT
                         const totalLength = progressEvent.lengthComputable
                             ? progressEvent.total
                             : progressEvent.target.getResponseHeader('content-length') ||
-                              progressEvent.target.getResponseHeader('x-decompressed-content-length');
+                            progressEvent.target.getResponseHeader('x-decompressed-content-length');
                         if (totalLength !== null) {
                             total += totalLength;
                             progress += Math.round((progressEvent.loaded * 100) / total);

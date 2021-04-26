@@ -1,0 +1,32 @@
+import ./common.chatito
+import ./commonDateTime.chatito
+
+%[addVitalsComboToChart]('training': '200', 'testing': '200')
+    *[50%] ~[add?] @[vitalsComboEvent] @[vitalsComboMeasurement] ~[at] @[vitalsComboDateTime]
+    *[50%] @[vitalsComboEvent] @[vitalsComboMeasurement]
+
+@[vitalsComboEvent]
+    vitals
+    vitals combo
+    combo
+
+@[vitalsComboMeasurement]
+    80 / 120 60 98%
+    88 / 125 75 95%
+    77 / 130 85 90%
+    90 / 145 100 91%
+    60 / 110 54 99%    
+    80 over 120 60 98%
+    88 over 125 75 95%
+    77 over 130 85 90%
+    90 over 145 100 91%
+    60 over 110 54 99%
+
+@[vitalsComboDateTime]
+    ~[at?] ~[contextualDate]
+    ~[contextualDate] ~[at?] ~[times?]
+    ~[contextualDate] at ~[times]
+    ~[times?] ~[contextualDate]
+    ~[monthsDates] ~[monthDayExtensions] ~[times?]
+    ~[times?] ~[monthsDates] ~[monthDayExtensions]
+

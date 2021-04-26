@@ -20,14 +20,14 @@ export default class ChatWidget extends React.Component<IChatResponsesProps, {}>
     public render() {
         const responses = <ChatResponses predict={this.props.predict} />;
         const initialSteps = [
-            { id: 'hi', message: 'Hi, I am Zena, how can I help you?', trigger: 'input' },
+            { id: 'hi', message: 'Hi, I am Hazel, how can I help you?', trigger: 'input' },
             { id: 'input', trigger: 'response', user: true },
             { id: 'response', trigger: 'input', component: responses, waitAction: true, asMessage: true }
         ];
         return (
             <ThemeProvider theme={theme}>
                 <SimpleChat
-                    headerTitle="Chat demo"
+                    headerTitle="Hazel (Hey ZOLL) demo"
                     steps={initialSteps}
                     recognitionEnable={true}
                     recognitionLang="en"

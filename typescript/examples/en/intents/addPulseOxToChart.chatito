@@ -1,0 +1,29 @@
+import ./common.chatito
+import ./commonDateTime.chatito
+
+%[addPulseOxToChart]('training': '200', 'testing': '200')
+    *[50%] ~[add?] @[pulseOxEvent] @[pulseOxMeasurement] ~[at] @[pulseOxDateTime]
+    *[50%] @[pulseOxEvent] @[pulseOxMeasurement]
+
+@[pulseOxEvent]
+    pulse ox
+    Pulse oximetry
+    oxygen
+    ox
+
+@[pulseOxMeasurement]
+    76%
+    78%
+    82%
+    92%
+    95%
+    98%
+
+@[pulseOxDateTime]
+    ~[at?] ~[contextualDate]
+    ~[contextualDate] ~[at?] ~[times?]
+    ~[contextualDate] at ~[times]
+    ~[times?] ~[contextualDate]
+    ~[monthsDates] ~[monthDayExtensions] ~[times?]
+    ~[times?] ~[monthsDates] ~[monthDayExtensions]
+

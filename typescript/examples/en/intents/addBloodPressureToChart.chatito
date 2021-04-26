@@ -1,26 +1,26 @@
 import ./common.chatito
 import ./commonDateTime.chatito
 
-%[addVitalsToChart]('training': '200', 'testing': '200')
-    *[50%] ~[add?] @[vitalEvent] @[measurementBP] ~[at] @[vitalDateTime]
-    *[50%] @[vitalEvent] @[measurementBP]
+%[addBloodPressureToChart]('training': '200', 'testing': '200')
+    *[50%] ~[add?] @[bpEvent] @[bpMeasurement] ~[at] @[bpDateTime]
+    *[50%] @[bpEvent] @[bpMeasurement]
 
-@[vitalEvent]
+@[bpEvent]
     blood pressure
     bp
     pressure
 
-@[measurementBP]
-    80 over 120
-    70 over 129
-    65 over 130
-    75 over 160
-    66 over 166
-    55 over 110
+@[bpMeasurement]
+    80 ~[over] 120
+    70 ~[over] 129
+    65 ~[over] 130
+    75 ~[over] 160
+    66 ~[over] 166
+    55 ~[over] 110
 
 
 
-@[vitalDateTime]
+@[bpDateTime]
     ~[at?] ~[contextualDate]
     ~[contextualDate] ~[at?] ~[times?]
     ~[contextualDate] at ~[times]

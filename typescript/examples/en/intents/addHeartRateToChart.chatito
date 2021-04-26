@@ -1,0 +1,32 @@
+import ./common.chatito
+import ./commonDateTime.chatito
+
+%[addHeartRateToChart]('training': '200', 'testing': '200')
+    *[50%] ~[add?] @[hrEvent] @[hrMeasurement] ~[at] @[hrDateTime]
+    *[50%] @[hrEvent] @[hrMeasurement]
+
+@[hrEvent]
+    hr
+    heart rate
+    pulse
+
+@[hrMeasurement]
+    50
+    55
+    63
+    66
+    75
+    80
+    102
+    110
+
+
+
+@[hrDateTime]
+    ~[at?] ~[contextualDate]
+    ~[contextualDate] ~[at?] ~[times?]
+    ~[contextualDate] at ~[times]
+    ~[times?] ~[contextualDate]
+    ~[monthsDates] ~[monthDayExtensions] ~[times?]
+    ~[times?] ~[monthsDates] ~[monthDayExtensions]
+
