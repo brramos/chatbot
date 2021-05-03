@@ -2,7 +2,6 @@ import * as webAdapter from 'chatito/dist/adapters/web';
 import * as fs from 'fs';
 import * as path from 'path';
 import englishTokenizer from '../languages/en/EnglishTokenizer';
-import spanishTokenizer from '../languages/es/SpanishTokenizer';
 import { IAidaTokenizer, IDatasetParams, ITestingParams, ITrainingParams } from '../types';
 import { dictionariesFromDataset } from './dictionaryUtils';
 
@@ -14,8 +13,6 @@ export function getTokenizerAndDictionaryForLanguage(language: 'en' | 'es'): IRe
     const lang = language ? language.toLowerCase() : language;
     if (lang === 'en') {
         return { tokenizer: englishTokenizer, dictionary: path.resolve(__dirname, '../languages/en/dict.json') };
-    } else if (lang === 'es') {
-        return { tokenizer: spanishTokenizer, dictionary: path.resolve(__dirname, '../languages/es/dict.json') };
     }
     throw new Error("Invalid config language. Only 'en' and 'es' are supported.");
 }

@@ -77,10 +77,11 @@ export default class ChatResponses extends React.Component<IChatResponsesProps &
         if (!prediction || prediction.confidence < 0.35) {
             return "I'm not sure what you mean";
         }
+        
         const responseMap: { [key: string]: () => Promise<any> } = {
-            //greet: async () => 'Hey, how can i help you?',
-            //bye: async () => 'Ok, bye',
-            encounter: async () => 'Ok, encounter event',
+            greet: async () => 'hello Fred, how can i help you?',
+            bye: async () => 'Ok, good bye Fred.  I am synching the chart.  Data is at 98% confidence',
+            addVitalsComboToChart: async () => await this.addVitalsToChart(prediction),
             //affirmative: async () => 'Allright.',
             //negative: async () => 'Ok, i understand no.',
             //wtf: async () => "hm... i'm just an AI assistant, how can i help you?",
@@ -240,4 +241,49 @@ export default class ChatResponses extends React.Component<IChatResponsesProps &
             }
         }
     };
+
+    private addVitalsToChart = async (prediction: IClassificationPred & ISlotReducer) => {
+        if (prediction.slots) {
+            const { vitalsComboMeasurement, vitalsComboDateTime } = prediction.slots;
+            //const retMsg = 'i need an event name and date-time to schedule something at your calendar';
+            //if (!vitalsComboMeasurement && !vitalsComboDateTime) {
+                //return retMsg;
+            //}
+            const vitalsEventQuery = (vitalsComboMeasurement || [])
+                .map(s => (s.confidence > 0.5 ? s.value : ''))
+                .join(' ')
+                .replace(/\s\s+/g, ' ')
+                .trim();
+            const dateTimeQuery = (vitalsComboDateTime || [])
+                .map(s => (s.confidence > 0.5 ? s.value : ''))
+                .join(' ')
+                .replace(/\s\s+/g, ' ')
+                .trim();
+            let parsedDate = null;
+            let dateString = null;
+            if (dateTimeQuery) {
+                try {
+                    parsedDate = chrono.parseDate(dateTimeQuery);
+                    dateString = parsedDate.toLocaleTimeString('EN', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                } catch (e) {
+                    console.error('unaable to parse date: ' + parsedDate );
+                }
+            }
+            var d = new Date();
+            var dString = d.toLocaleString()
+            if (parsedDate && !vitalsEventQuery) {
+                return `Vitals at "${dateString}" recorded`;
+            } else if (vitalsEventQuery && !parsedDate) {
+                return `Vitals at "${dString}" recorded`;
+            } else {
+                return `Vitals at "${dString}" recorded`;
+            }
+        }
+    };
+
 }

@@ -5,7 +5,7 @@ export default function DefaultHeader() {
     return (
         <Helmet
             key="helmet"
-            title="Aida"
+            title="Hazel"
             meta={[
                 { name: 'description', content: 'Build amazing conversational experiences' },
                 {

@@ -27,7 +27,7 @@ export default class ChatWidget extends React.Component<IChatResponsesProps, {}>
         return (
             <ThemeProvider theme={theme}>
                 <SimpleChat
-                    headerTitle="Hazel (Hey ZOLL) demo"
+                    headerTitle="Hazel digital assistant"
                     steps={initialSteps}
                     recognitionEnable={true}
                     recognitionLang="en"

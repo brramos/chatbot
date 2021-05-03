@@ -1,6 +1,5 @@
 import * as tf from '@tensorflow/tfjs';
 import englishTokenizer from '../../languages/en/EnglishTokenizer';
-import spanishTokenizer from '../../languages/es/SpanishTokenizer';
 import * as types from '../../types';
 import { EmbeddingsModel } from './embeddings/EmbeddingsModel';
 import ClassificationModel from './models/classification';
@@ -10,9 +9,7 @@ function getTokenizer(language: 'en' | 'es') {
     const lang = language ? language.toLowerCase() : language;
     if (lang === 'en') {
         return englishTokenizer;
-    } else if (lang === 'es') {
-        return spanishTokenizer;
-    }
+    } 
     throw new Error("Invalid config language. Only 'en' and 'es' are supported.");
 }
 

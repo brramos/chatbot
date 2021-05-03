@@ -71,13 +71,9 @@
     "prepublish": "rm -rf ./dist && tsc --project ./tsconfig_npm.json --skipLibCheck",
     "prettier": "prettier --write '{web,src}/**/*.{ts,tsx}'",
     "dictionary:en:generate": "ts-node src/utils/createDictionaryFromFastext.ts en",
-    "dictionary:es:generate": "ts-node src/utils/createDictionaryFromFastext.ts es",
     "dataset:en:generate": "npm run dataset:en:delete && mkdir ./examples/en/data && npx chatito ./examples/en --outputPath=./examples/en/data",
     "dataset:en:delete": "rm -rf ./examples/en/data",
     "dataset:en:process": "npm run dataset:en:generate && ts-node src/utils/processDatasets.ts ./examples/en/aidaConfig.json && npm run dataset:en:delete",
-    "dataset:es:generate": "npm run dataset:es:delete && mkdir ./examples/es/data && npx chatito ./examples/es --outputPath=./examples/es/data",
-    "dataset:es:delete": "rm -rf ./examples/es/data",
-    "dataset:es:process": "npm run dataset:es:generate && ts-node src/utils/processDatasets.ts ./examples/es/aidaConfig.json && npm run dataset:es:delete",
     "web:build": "npm run cleanup && gatsby build",
     "web:build:try": "npm run web:build && http-server public --gzip",
     "web:start": "npm run cleanup && gatsby develop",
@@ -88,10 +84,6 @@
   "engines": {
     "node": ">=8.11.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rodrigopivi/aida.git"
-  },
   "keywords": [
     "chatbot",
     "chatbots",
@@ -101,8 +93,5 @@
     "natural language processing",
     "natural language understanding",
     "nlp"
-  ],
-  "author": "Rodrigo Pimentel",
-  "homepage": "https://aida.dor.ai",
-  "license": "MIT"
+  ]
 }
